@@ -1,0 +1,112 @@
+// app global css in Sass form
+@import ./scroll.css
+
+.fs--8 
+    font-size: 6px !important
+
+.fs--10 
+    font-size: 10px !important
+
+.fs--18 
+  font-size: 18px !important
+
+.fs--12 
+    font-size: 12px !important
+
+.fs--14 
+    font-size: 14px !important
+
+.fs--16 
+    font-size: 16px !important
+
+.fs--24
+    font-size: 24px !important
+
+.fs--36
+    font-size: 36px !important
+
+.q-drawer--left
+    position: fixed !important
+
+.border-primary
+    border: 2px solid $primary !important
+    border-radius: 10px
+
+.border-danger
+    border: 2px solid $negative !important
+    border-radius: 10px
+
+.q-dialog__inner--minimized > div 
+    max-height: none
+
+
+.border-warning
+    border: 2px solid $warning !important
+    border-radius: 10px
+// ScrollBar CSS
+
+
+.timesheet-card ::-webkit-scrollbar
+  width: 6px
+
+
+::-webkit-scrollbar 
+  width: 10px
+
+
+/* Track */
+::-webkit-scrollbar-track 
+  box-shadow: inset 0 0 5px grey 
+  border-radius: 1000px
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb 
+  background: grey 
+  border-radius: 50px
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+  background: grey 
+
+// ScrollBar CSS END
+
+.sticky-header-table
+  height: 70vh
+
+  .q-table__top,
+  .q-table__bottom,
+  thead tr:first-child th
+    background-color: white
+
+  thead tr th
+    position: sticky
+    z-index: 1
+  thead tr:first-child th
+    top: 0
+
+  /* this is when the loading indicator appears */
+  &.q-table--loading thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px
+
+
+
+
+
+::-webkit-scrollbar
+    width: 5px
+    height: 5px
+
+
+
+.q-tab-panels
+  background: none!important
+
+.q-editor__content
+  max-height: 160px
+
+.scroll_timesheet
+  height: 65vh;
+  overflow-y: auto;

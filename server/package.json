@@ -1,0 +1,36 @@
+{
+  "name": "gen-suite-backend",
+  "version": "1.0.0",
+  "description": "A one stop solution to all your needs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "test"
+  },
+  "keywords": [
+    "Node",
+    "MEVN",
+    "Express.js",
+    "Vue"
+  ],
+  "author": "rahul.holani@genesistechnologies.in",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.818.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "formidable": "^1.2.2",
+    "helmet": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.13",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
