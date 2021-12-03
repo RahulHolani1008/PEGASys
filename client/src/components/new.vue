@@ -180,7 +180,7 @@
 </template>
 
 <script>
-import { format } from "highcharts";
+// import { format } from "highcharts";
 import functions from "../services/functions";
 export default {
   data() {

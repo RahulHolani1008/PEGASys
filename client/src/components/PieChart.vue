@@ -1,5 +1,5 @@
 <template>
-  <div class="relative-position">
+  <!-- <div class="relative-position">
     <div id="pieChart" class="pie-chart-dashboard"></div>
     <div class="rangeSelector cursor-pointer absolute q-mt-lg">
       <li>
@@ -20,186 +20,187 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
+  <div />
 </template>
 <script>
-import { Chart } from "highcharts-vue";
-import Highcharts from "highcharts";
-import More from "highcharts/highcharts-more";
-import TimesheetsService from "../services/timesheets.service";
-import { mapGetters } from "vuex";
+// import { Chart } from "highcharts-vue";
+// import Highcharts from "highcharts";
+// import More from "highcharts/highcharts-more";
+// import TimesheetsService from "../services/timesheets.service";
+// import { mapGetters } from "vuex";
 
-import functions from "../services/functions";
-export default {
-  name: "PieChart",
-  mounted() {
-    this.loadChart();
-    this.getProjectByUserId();
-  },
-  data() {
-    return {
-      active_el: 4,
-      chart: null,
-      chartData: [],
-      rangeSelectors: [
-        {
-          Label: "7 days",
-          value: "lastWeek",
-        },
-        {
-          Label: "30 days",
-          value: "lastMonth",
-        },
-        {
-          Label: "6 Months",
-          value: "lastSixMonths",
-        },
-        {
-          Label: "1 Year",
-          value: "lastYear",
-        },
-        {
-          Label: "All Time",
-          value: "default",
-        },
-      ],
-    };
-  },
-  methods: {
-    loadChart() {
-      this.chart = new Highcharts.Chart({
-        chart: {
-          renderTo: "pieChart",
-          type: "pie",
-          marginTop: -17,
-          backgroundColor: "transparent",
-        },
-        credits: {
-          enabled: false,
-        },
-        exporting: {
-          buttons: [
-            {
-              enabled: true,
-            },
-          ],
-        },
-        title: {
-          text: "",
-          // text: "Projects time share",
-        },
-        yAxis: {
-          title: {
-            text: "Total Percent Time spent",
-          },
-        },
-        plotOptions: {
-          pie: {
-            shadow: false,
-          },
-        },
-        tooltip: {
-          formatter: function () {
-            return (
-              "<b>" +
-              this.point.name +
-              "</b>: <b>" +
-              Math.floor(this.y / 60) +
-              ":" +
-              (this.y % 60) +
-              "</b>"
-            );
-          },
-        },
-        colors: [
-          "#4D4D4D",
-          "#93be3b",
-          "#5DA5DA",
-          "#FAA43A",
-          "#F17CB0",
-          "#DECF3F",
-          "#F15854",
-          "#F0F8FF",
-          "#00FFFF",
-          "#7FFFD4",
-          "#8A2BE2",
-          "#A9A9A9",
-          "#8B008B",
-          "#8FBC8F",
-          "#2F4F4F",
-          "#FF1493",
-          "#800080",
-        ],
-        series: [
-          {
-            name: "Projects",
-            data: this.chartData,
-            marginTop: -100,
-            size: "70%",
-            innerSize: "70%",
-            showInLegend: true,
+// import functions from "../services/functions";
+// export default {
+//   name: "PieChart",
+//   mounted() {
+//     this.loadChart();
+//     this.getProjectByUserId();
+//   },
+//   data() {
+//     return {
+//       active_el: 4,
+//       chart: null,
+//       chartData: [],
+//       rangeSelectors: [
+//         {
+//           Label: "7 days",
+//           value: "lastWeek",
+//         },
+//         {
+//           Label: "30 days",
+//           value: "lastMonth",
+//         },
+//         {
+//           Label: "6 Months",
+//           value: "lastSixMonths",
+//         },
+//         {
+//           Label: "1 Year",
+//           value: "lastYear",
+//         },
+//         {
+//           Label: "All Time",
+//           value: "default",
+//         },
+//       ],
+//     };
+//   },
+//   methods: {
+//     loadChart() {
+//       this.chart = new Highcharts.Chart({
+//         chart: {
+//           renderTo: "pieChart",
+//           type: "pie",
+//           marginTop: -17,
+//           backgroundColor: "transparent",
+//         },
+//         credits: {
+//           enabled: false,
+//         },
+//         exporting: {
+//           buttons: [
+//             {
+//               enabled: true,
+//             },
+//           ],
+//         },
+//         title: {
+//           text: "",
+//           // text: "Projects time share",
+//         },
+//         yAxis: {
+//           title: {
+//             text: "Total Percent Time spent",
+//           },
+//         },
+//         plotOptions: {
+//           pie: {
+//             shadow: false,
+//           },
+//         },
+//         tooltip: {
+//           formatter: function () {
+//             return (
+//               "<b>" +
+//               this.point.name +
+//               "</b>: <b>" +
+//               Math.floor(this.y / 60) +
+//               ":" +
+//               (this.y % 60) +
+//               "</b>"
+//             );
+//           },
+//         },
+//         colors: [
+//           "#4D4D4D",
+//           "#93be3b",
+//           "#5DA5DA",
+//           "#FAA43A",
+//           "#F17CB0",
+//           "#DECF3F",
+//           "#F15854",
+//           "#F0F8FF",
+//           "#00FFFF",
+//           "#7FFFD4",
+//           "#8A2BE2",
+//           "#A9A9A9",
+//           "#8B008B",
+//           "#8FBC8F",
+//           "#2F4F4F",
+//           "#FF1493",
+//           "#800080",
+//         ],
+//         series: [
+//           {
+//             name: "Projects",
+//             data: this.chartData,
+//             marginTop: -100,
+//             size: "70%",
+//             innerSize: "70%",
+//             showInLegend: true,
 
-            dataLabels: {
-              enabled: false,
-            },
-          },
-        ],
-      });
-    },
-    async getProjectByUserId(rangeValue, index) {
-      var startDate;
-      var date = new Date();
-      var endDate = date.toISOString();
-      if (rangeValue === "lastWeek") {
-        date.setDate(date.getDate() - 7);
-        startDate = date.toISOString();
-        this.active_el = index;
-      } else if (rangeValue === "lastMonth") {
-        date.setMonth(date.getMonth() - 1);
-        startDate = date.toISOString();
-        this.active_el = index;
-      } else if (rangeValue === "lastSixMonths") {
-        date.setMonth(date.getMonth() - 6);
-        startDate = date.toISOString();
-        this.active_el = index;
-      } else if (rangeValue === "lastYear") {
-        date.setFullYear(date.getFullYear() - 1);
-        startDate = date.toISOString();
-        this.active_el = index;
-      } else {
-        date.setFullYear(date.getFullYear() - 150);
-        startDate = date.toISOString();
-        this.active_el = 4;
-      }
+//             dataLabels: {
+//               enabled: false,
+//             },
+//           },
+//         ],
+//       });
+//     },
+//     async getProjectByUserId(rangeValue, index) {
+//       var startDate;
+//       var date = new Date();
+//       var endDate = date.toISOString();
+//       if (rangeValue === "lastWeek") {
+//         date.setDate(date.getDate() - 7);
+//         startDate = date.toISOString();
+//         this.active_el = index;
+//       } else if (rangeValue === "lastMonth") {
+//         date.setMonth(date.getMonth() - 1);
+//         startDate = date.toISOString();
+//         this.active_el = index;
+//       } else if (rangeValue === "lastSixMonths") {
+//         date.setMonth(date.getMonth() - 6);
+//         startDate = date.toISOString();
+//         this.active_el = index;
+//       } else if (rangeValue === "lastYear") {
+//         date.setFullYear(date.getFullYear() - 1);
+//         startDate = date.toISOString();
+//         this.active_el = index;
+//       } else {
+//         date.setFullYear(date.getFullYear() - 150);
+//         startDate = date.toISOString();
+//         this.active_el = 4;
+//       }
 
-      const response = await TimesheetsService.getTimeSpentByUser(
-        this.$store.getters.userId,
-        startDate,
-        endDate
-      );
-      console.log(response);
-      this.chartData = [];
-      response.data.forEach((ele) => {
-        this.chartData.push({
-          name: ele.name,
-          y: ele.time,
-        });
-      });
-      this.loadChart();
-      this.chart.redraw();
-      // console.log("Close Chart: " + JSON.stringify(this.chart.series[0].data[0].name));
-    },
-  },
-  watch: {
-    pieChartData: function (newValue) {
-      this.loadChart();
-      this.chart.redraw();
-    },
-  },
-};
+//       const response = await TimesheetsService.getTimeSpentByUser(
+//         this.$store.getters.userId,
+//         startDate,
+//         endDate
+//       );
+//       console.log(response);
+//       this.chartData = [];
+//       response.data.forEach((ele) => {
+//         this.chartData.push({
+//           name: ele.name,
+//           y: ele.time,
+//         });
+//       });
+//       this.loadChart();
+//       this.chart.redraw();
+//       // console.log("Close Chart: " + JSON.stringify(this.chart.series[0].data[0].name));
+//     },
+//   },
+//   watch: {
+//     pieChartData: function (newValue) {
+//       this.loadChart();
+//       this.chart.redraw();
+//     },
+//   },
+// };
 </script>
 <style>
-.pie-chart-dashboard .highcharts-container {
+/* .pie-chart-dashboard .highcharts-container {
   height: 250px !important;
 }
 .pie-chart-dashboard .highcharts-root {
@@ -223,5 +224,5 @@ export default {
     font-size: 0.8em;
     width: 82px;
   }
-}
+} */
 </style>

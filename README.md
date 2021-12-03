@@ -9,5 +9,5 @@ npm start
 To Run Client:
 
 npm i
-npm i --g @quasar/cli
+npm i -g @quasar/cli
 quasar dev

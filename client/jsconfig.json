@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true, 
+    "typeRoots": [
+      "node_modules/@types",
+      "src/typings"
+    ],
     "baseUrl": ".",
     "paths": {
       "src/*": [

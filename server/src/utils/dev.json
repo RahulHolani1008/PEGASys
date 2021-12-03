@@ -2,7 +2,7 @@
   "DevmongoURI": "mongodb://gendev:Genesis1234@13.234.107.162:27017/gensuite?retryWrites=true&w=majority&authSource=admin",
   "mongoURI": "mongodb+srv://RahulHolani:Genesis@1234$@gensuite.v2ogl.mongodb.net/gensuite?retryWrites=true&w=majority",
   "secret": "abcdefghijklmnopqrstuvwxyz123456789",
-  "bucketName":"*****",
-  "iAmUserKey":"****************",
-  "iAmUserSecret" :"********************************"
+  "bucketName": "*****",
+  "iAmUserKey": "****************",
+  "iAmUserSecret": "********************************"
 }

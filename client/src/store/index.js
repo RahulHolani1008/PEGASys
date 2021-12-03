@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import HighchartsVue from "highcharts-vue";
-import Highcharts from "highcharts";
-import mapInit from "highcharts/modules/map";
+// import HighchartsVue from "highcharts-vue";
+// import Highcharts from "highcharts";
+// import mapInit from "highcharts/modules/map";
 import createPersistedState from "vuex-persistedstate";
 import CryptoJS from 'crypto-js'
 
@@ -13,8 +13,8 @@ const apiKey = '123xxxyyyzzz' // change to your api key
  
 Vue.use(CryptoJS)
 Vue.use(Vuex);
-mapInit(Highcharts);
-Vue.use(HighchartsVue);
+// mapInit(Highcharts);
+// Vue.use(HighchartsVue);
 
 const aesEncrypt = (txt) => {
   const cipher = CryptoJS.AES.encrypt(txt, CryptoJS.enc.Utf8.parse(key), {

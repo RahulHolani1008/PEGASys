@@ -101,7 +101,6 @@ export default {
   watch: {
     logoutVal: function (newVal) {
       if (newVal) {
-        console.log("YO DAWG");
         this.userDataChanged = true;
       }
     },

@@ -148,7 +148,7 @@
   </div>
 </template>
 <script>
-import { dateFormat } from "highcharts";
+// import { dateFormat } from "highcharts";
 import AddTimeSheet from "./AddTimeSheet.vue";
 import ApplyForLeave from "../components/Leaves/ApplyForLeave.vue";
 import TimesheetsService from "../services/timesheets.service";
