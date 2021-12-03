@@ -1,6 +1,6 @@
 {
   "DevmongoURI": "<SECRET MONGO URL>",
-  "mongoURI": "mongodb+srv://RahulHolani:Genesis@1234$@gensuite.v2ogl.mongodb.net/gensuite?retryWrites=true&w=majority",
+  "mongoURI": "<SECRET MONGO URL>",
   "secret": "abcdefghijklmnopqrstuvwxyz123456789",
   "bucketName": "*****",
   "iAmUserKey": "****************",
